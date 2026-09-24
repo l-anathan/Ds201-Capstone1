@@ -1,7 +1,7 @@
 
 ---
 title: "README"
-author: "Miles & [Teammate Name]"
+author: "Miles Nienstadt & Lily Nathan"
 output: 
   github_document:
   pandoc_args: ["--wrap=none"]
