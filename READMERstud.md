@@ -243,20 +243,20 @@ certain series/annotations.
 ### Handling Missing Values
 
 Missing values in this dataset are largely structural rather than
-random. For index_sa, seasonal adjustment is not available for every
+random. For `index_sa`, seasonal adjustment is not available for every
 series or geographic level. Because of this, our primary analysis will
-use index_nsa, which has much broader coverage. If seasonally adjusted
+use `index_nsa`, which has much broader coverage. If seasonally adjusted
 values are needed, we can restrict the analysis to subsets of the data
-where index_sa is available. Another possible approach would be to
+where `index_sa` is available. Another possible approach would be to
 estimate seasonal adjustments for missing observations using an
 appropriate time-series method, though this would require additional
 assumptions.
 
-For rstderr, we would not attempt to manually fill in missing values.
+For `rstderr`, we would not attempt to manually fill in missing values.
 This variable reflects the estimated uncertainty or reliability of the
 HPI calculation, so imputing it could create misleading measures of
-precision. Instead, missing rstderr values should be left as missing and
-only used where FHFA reports them.
+precision. Instead, missing `rstderr` values should be left as missing
+and only used where FHFA reports them.
 
 ## 2. Data Summary & Initial Insights
 
@@ -354,7 +354,7 @@ ggplot(hpi_master, aes(x = index_nsa)) +
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/hist-index-1.png)<!-- -->
+![](READMERstud_files/figure-gfm/hist-index-1.png)<!-- -->
 
 ### Visualization: National HPI Trend Over Time
 
@@ -379,9 +379,9 @@ ggplot(national_over_time, aes(x = date, y = index_nsa)) +
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/box-index-by-type-1.png)<!-- -->
+![](READMERstud_files/figure-gfm/national-trend-1.png)<!-- -->
 
-### Visualization: Census Division Trends
+### Census Division Trends
 
 ``` r
 division_trends <- hpi_master %>%
@@ -411,7 +411,7 @@ ggplot(
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/census-trend-1.png)<!-- -->
+![](READMERstud_files/figure-gfm/census-division-1.png)<!-- -->
 
 ### Five-Year House Price Growth by State
 
@@ -471,7 +471,7 @@ ggplot(
   )
 ```
 
-![](README_files/figure-gfm/year-change-1.png)<!-- -->
+![](READMERstud_files/figure-gfm/state-five-year-growth-1.png)<!-- -->
 
 ### 3. Complementary Dataset: Census Building Permits Survey
 
@@ -497,3 +497,7 @@ housing markets.
 
 Source: [U.S. Census Bureau Building Permits
 Survey](https://www.census.gov/construction/bps/index.html)
+
+## 4. Communicating Your Findings
+
+*(To do: plain-language summary for a non-technical audience.)*
